@@ -237,6 +237,54 @@
   font-variant-numeric: tabular-nums;
 }
 
+.filter-field {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 24px;
+  color: var(--text-h);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.filter-field select {
+  min-height: 40px;
+  padding: 0 32px 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font: inherit;
+  font-weight: 400;
+}
+
+.filter-field select:focus {
+  border-color: var(--accent);
+  outline: 3px solid var(--accent-bg);
+}
+
+.delete-expense-button {
+  padding: 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+}
+
+.delete-expense-button:hover {
+  border-color: #d14343;
+  color: #d14343;
+}
+
+.delete-expense-button:focus-visible {
+  outline: 3px solid var(--accent-border);
+  outline-offset: 2px;
+}
+
 @media (max-width: 640px) {
   .app {
     width: min(100% - 32px, 480px);
@@ -254,5 +302,14 @@
   .form-actions {
     align-items: flex-start;
     flex-direction: column-reverse;
+  }
+
+  .filter-field {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .expense-item {
+    flex-wrap: wrap;
   }
 }

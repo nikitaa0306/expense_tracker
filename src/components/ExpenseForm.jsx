@@ -1,11 +1,10 @@
 import { useState } from 'react'
-
-const categories = ['Food', 'Travel', 'Bills', 'Other']
+import { expenseCategories } from '../constants/expenseCategories.js'
 
 function ExpenseForm({ onAddExpense }) {
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState('')
-  const [category, setCategory] = useState(categories[0])
+  const [category, setCategory] = useState(expenseCategories[0])
   const [error, setError] = useState('')
 
   function handleSubmit(event) {
@@ -31,7 +30,7 @@ function ExpenseForm({ onAddExpense }) {
     })
     setTitle('')
     setAmount('')
-    setCategory(categories[0])
+    setCategory(expenseCategories[0])
     setError('')
   }
 
@@ -91,7 +90,7 @@ function ExpenseForm({ onAddExpense }) {
               value={category}
               onChange={(event) => setCategory(event.target.value)}
             >
-              {categories.map((option) => (
+              {expenseCategories.map((option) => (
                 <option key={option} value={option}>
                   {option}
                 </option>
