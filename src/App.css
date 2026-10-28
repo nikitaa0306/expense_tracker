@@ -222,6 +222,21 @@
   white-space: nowrap;
 }
 
+/* Append or update this in App.css */
+
+.expense-summary {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.expense-total {
+  color: var(--text-h);
+  font-size: 14px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
 @media (max-width: 640px) {
   .app {
     width: min(100% - 32px, 480px);
