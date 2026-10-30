@@ -49,6 +49,7 @@ function ExpenseForm({ onAddExpense }) {
           <label className="form-field">
             <span>Title</span>
             <input
+              data-testid="expense-title-input"
               type="text"
               name="title"
               placeholder="e.g. Weekly groceries"
@@ -63,6 +64,7 @@ function ExpenseForm({ onAddExpense }) {
           <label className="form-field">
             <span>Amount</span>
             <input
+              data-testid="expense-amount-input"
               type="number"
               name="amount"
               placeholder="0.00"
@@ -86,6 +88,7 @@ function ExpenseForm({ onAddExpense }) {
           <label className="form-field">
             <span>Category</span>
             <select
+              data-testid="expense-category-input"
               name="category"
               value={category}
               onChange={(event) => setCategory(event.target.value)}
@@ -101,6 +104,7 @@ function ExpenseForm({ onAddExpense }) {
 
         <div className="form-actions">
           <p
+            data-testid="expense-form-error"
             className="form-error"
             id="form-error"
             role={error ? 'alert' : undefined}
@@ -108,7 +112,11 @@ function ExpenseForm({ onAddExpense }) {
           >
             {error}
           </p>
-          <button type="submit" className="submit-button">
+          <button
+            data-testid="add-expense-button"
+            type="submit"
+            className="submit-button"
+          >
             Add expense <span aria-hidden="true">→</span>
           </button>
         </div>

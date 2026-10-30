@@ -5,6 +5,7 @@ function ExpenseFilter({ selectedCategory, onCategoryChange }) {
     <label className="filter-field">
       <span>Filter by category</span>
       <select
+        data-testid="category-filter"
         value={selectedCategory}
         onChange={(event) => onCategoryChange(event.target.value)}
       >
