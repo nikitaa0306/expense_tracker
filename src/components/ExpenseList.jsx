@@ -9,26 +9,30 @@ function ExpenseList({ expenses, onDeleteExpense, selectedCategory }) {
           <h2 id="expenses-heading">Recent expenses</h2>
         </div>
         <div className="expense-summary">
-          <span className="expense-count">
+          <span data-testid="expense-count" className="expense-count">
             Showing {expenses.length}{' '}
             {expenses.length === 1 ? 'expense' : 'expenses'}
           </span>
-          <span className="expense-total">
+          <span data-testid="expense-total" className="expense-total">
             Total: ${total.toFixed(2)}
           </span>
         </div>
       </div>
 
       {expenses.length === 0 ? (
-        <p className="empty-state">
+        <p data-testid="empty-state" className="empty-state">
           {selectedCategory === 'All'
             ? 'Your expenses will show up here.'
             : `No ${selectedCategory} expenses to show.`}
         </p>
       ) : (
-        <ul className="expense-list">
+        <ul data-testid="expense-list" className="expense-list">
           {expenses.map((expense) => (
-            <li className="expense-item" key={expense.id}>
+            <li
+              data-testid="expense-item"
+              className="expense-item"
+              key={expense.id}
+            >
               <div className="expense-details">
                 <span className="expense-title">{expense.title}</span>
                 <span className="expense-category">{expense.category}</span>
@@ -37,6 +41,7 @@ function ExpenseList({ expenses, onDeleteExpense, selectedCategory }) {
                 ${expense.amount.toFixed(2)}
               </span>
               <button
+                data-testid="delete-expense-button"
                 type="button"
                 className="delete-expense-button"
                 aria-label={`Delete ${expense.title}`}
